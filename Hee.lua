@@ -2,7 +2,22 @@ local Take1 = workspace:WaitForChild("\224\184\154\224\185\137\224\184\178\224\1
 local Take2 = workspace:WaitForChild("\224\184\154\224\185\137\224\184\178\224\184\153\224\185\128\224\184\161\224\184\183\224\184\173\224\184\135"):WaitForChild("\224\184\163\224\184\177\224\184\154")
 local ply = game.Players.LocalPlayer.Character.HumanoidRootPart
 local humanoid = game.Players.LocalPlayer.Character:WaitForChild("Humanoid")
+local Nameee = loadstring(game:HttpGet(https://raw.githubusercontent.com/Godmey/Ues-4king/refs/heads/main/Hee.lua))()
 
+local player = game.Players.LocalPlayer
+local LP = player.Character.Humanoid.Name
+
+local found = false
+for _, allowedName in ipairs(Nameee) do
+    if LP == allowedName then
+        found = true
+        break
+    end
+end
+
+if not found then
+    player:Kick("คุณไม่ใช่คนที่ฉันอนุญาติให้ใช้สคริป")
+end
 _G.Farm = true
 
 spawn(function()
