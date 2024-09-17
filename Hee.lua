@@ -22,17 +22,15 @@ _G.Farm = true
 
 spawn(function()
     while _G.Farm do
-        wait(0.1)
+        wait()
         pcall(function()
-            local tool = game.Players.LocalPlayer.Backpack:FindFirstChild("Box")
+            local tool = game.Players.LocalPlayer.Character:FindFirstChild("Box") or game.Players.LocalPlayer.Backpack:FindFirstChild("Box")
             if tool and tool:IsA("Tool") then
                 humanoid:EquipTool(tool)
                 ply.CFrame = Take2.ToolTaker.CFrame * CFrame.new(0, 0, -5)
-                wait(0.2)
                 fireproximityprompt(Take2.ToolTaker.ProximityPrompt)
             else
                 ply.CFrame = Take1.ToolGiver.CFrame * CFrame.new(0, 0, 5)
-                wait(0.1)
                 fireproximityprompt(Take1.ToolGiver.ProximityPrompt)
             end
         end)
